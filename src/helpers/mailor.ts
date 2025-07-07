@@ -42,7 +42,9 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
         emailType === "VERIFY" ? "verify your email" : "reset your password"
       } Or copy and paste URL to your Browser.
        <br>
-       ${process.env.domain}//verifyEmail?token=${hashedToken} 
+       ${process.env.domain}//${
+        emailType == "VERIFY" ? "verifyEmail" : "changePassword"
+      }?token=${hashedToken} 
       </p>`,
     };
 
@@ -51,8 +53,6 @@ export const sendEmail = async ({ email, emailType, userId }: any) => {
     const mailRes = await transport.sendMail(mailOptions);
 
     return mailRes;
-
-
   } catch (error: any) {
     console.error("Error sending email:", error.message);
     throw new Error(error.message);

@@ -57,9 +57,9 @@ export default function signupPage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1>{loading ? "Processing..." : "Signup"}</h1>
+      <h1  className="text-red-500">{loading ? "Processing..." : "Signup"}</h1>
       <hr />
-      <label htmlFor="username">Username</label>
+      <label htmlFor="username"  className="text-yellow-600">Username</label>
       <input
         className="border-2 border-gray-300 rounded-md p-2 mb-4"
         type="text"
@@ -69,7 +69,7 @@ export default function signupPage() {
         placeholder="username"
       />
 
-      <label htmlFor="email">Email</label>
+      <label htmlFor="email"  className="text-yellow-600">Email</label>
       <input
         className="border-2 border-gray-300 rounded-md p-2 mb-4"
         type="text"
@@ -79,7 +79,7 @@ export default function signupPage() {
         placeholder="email"
       />
 
-      <label htmlFor="password">Password</label>
+      <label htmlFor="password"  className="text-yellow-600">Password</label>
       <input
         className="border-2 border-gray-300 rounded-md p-2 mb-4"
         type="password"
@@ -90,12 +90,12 @@ export default function signupPage() {
       />
 
       <button
-        className="p-2 border border-amber-600 rounded-lg mb-4 focus:outline-none focus:border-amber-500 "
+        className="p-2 border  rounded-lg mb-4 focus:outline-none border-yellow-700 bg-red-900 cursor-pointer "
         onClick={onSignup}
       >
         {buttonDisabled ? "No Signup" : "Signup"}
       </button>
-      <Link href="/login">Visit Login Page</Link>
+      <Link href="/login"  className="text-yellow-800">Visit Login Page</Link>
     </div>
   );
 }
